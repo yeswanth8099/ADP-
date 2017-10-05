@@ -1,0 +1,13 @@
+--- # installing nginx
+- hosts        : localhost
+  user         : Yaswanth
+  sudo         : yes
+  connection   : ssh 
+  gather_facts : yes
+  
+  tasks:
+    - name : Installing nginx
+      raw : yum name=niginx:latest state=installed
+      name : start nginx 
+      raw : service name=nginx:latest state=started
+ 
